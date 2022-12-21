@@ -101,7 +101,8 @@ import { Car, cars as cars_list } from './cars';
     }
 
     // try to find the car by id
-    const car = cars.filter((car) => car.id == id);
+    //const car = cars.filter((car) => car.id == id);
+    const car = cars.filter((car) => car.id);
 
     // respond not found, if we do not have this id
     if(car && car.length === 0) {
