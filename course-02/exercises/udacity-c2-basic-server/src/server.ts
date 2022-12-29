@@ -96,7 +96,7 @@ import { Car, cars as cars_list } from './cars';
         return res.status(400).send("id is required");
       }
 
-      const car = cars.filter((car) => car.id );
+      const car = cars.filter((car) => car.id === parseInt(id));
 
       if(car && car.length === 0){
         return res.status(404).send("car is not found");

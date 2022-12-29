@@ -2,11 +2,11 @@ export const config = {
   "dev": {
     "username": "udacityinstagram",
     "password": "udacityinstagram",
-    "database": "",
+    "database": "udacityinstagram",
     "host": "udacityinstagram.ckfktfo5vfot.us-east-1.rds.amazonaws.com",
     "dialect": "postgres",
-    "aws_region": "",
-    "aws_profile": "",
+    "aws_region": "us-east-1c",
+    "aws_profile": "default",
     "aws_media_bucket": ""
   },
   "jwt": {
@@ -15,7 +15,7 @@ export const config = {
   "prod": {
     "username": "",
     "password": "",
-    "database": "udagram_prod",
+    "database": "",
     "host": "",
     "dialect": "postgres"
   }
