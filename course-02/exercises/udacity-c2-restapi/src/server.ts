@@ -1,12 +1,13 @@
 import express from 'express';
 import { sequelize } from './sequelize';
-
+import * as dotenv from 'dotenv';
 import { IndexRouter } from './controllers/v0/index.router';
 
 import bodyParser from 'body-parser';
 
 import { V0MODELS } from './controllers/v0/model.index';
 
+dotenv.config();
 require('dotenv').config();
 
 (async () => {
