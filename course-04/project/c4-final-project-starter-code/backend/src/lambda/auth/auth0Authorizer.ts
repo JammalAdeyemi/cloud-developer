@@ -55,6 +55,7 @@ export const handler = async (
 }
 
 async function verifyToken(authHeader: string): Promise<JwtPayload> {
+  logger.info('verifying Token', authHeader.substring(0, 20))
   const token = getToken(authHeader)
   const jwt: Jwt = decode(token, { complete: true }) as Jwt
 
@@ -66,7 +67,7 @@ async function verifyToken(authHeader: string): Promise<JwtPayload> {
   const signingKeys = keys.find(key => key.kid === jwt.header.kid)
   // const signingKeys = jwks.keys.filter(key => key.use === 'sig' && key.kty === 'RSA' && key.kid && (key.x5c && key.x5c.length))
   logger.info('signingKeys', signingKeys)
-  if (!signingKeys || !signingKeys.length) {
+  if (!signingKeys) {
     throw new Error('The JWKS endpoint did not contain any signing keys')
   }
   // get pem data
